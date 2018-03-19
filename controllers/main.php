@@ -11,33 +11,10 @@ class Main extends Controller {
         parent::__construct();
     }
 
-    public function getPage($page=false){
-
-        if($page === false) {
-
-            $page = 1;
-        }
-        $this->limit = 5;
-
-        $count = $this->model->getCountArticle();
-
-        $this->total_pages = ceil($count/$this->limit);
-
-        $this->offset = ($page - 1) * $this->limit;
-    }
-
-    public function index($page = false){
-
-            $this->getPage($page);
+    public function index(){
 
             $datas = $this->model->getCurl();
 
-            $count = $this->model->getCountArticle();
-
-            $answer = $this->model->getListModel($this->offset, $this->limit);
-
-            $data = $answer;
-
-        $this->view->render('main/index', $datas, $this->total_pages);
+        $this->view->render('main/index', $datas);
     }
 }

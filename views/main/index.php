@@ -3,16 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script>
-        $( ".goal" ).load( "pars.php" );
-    </script>
+
 </head>
-<div class="goal"></div>
 <body>
 <?
-var_dump($count);
-echo gettype($arg);
     foreach ($arg as $article) {
 
         $pq = pq($article);
@@ -48,17 +42,7 @@ echo gettype($arg);
             <?
         }
         echo '<br><br>';
-
     }
 ?>
-<!--<div class="paginatior">-->
-<!--    --><?php
-//        for ($i=1; $i <= $count; $i++){
-//    ?>
-<!--        <a href="--><?// echo URL;?><!--/getlist/--><?// echo $i?><!--">--><?// echo $i; ?><!--</a>-->
-<!--    --><?//
-//        }
-//    ?>
-<!--</div>-->
 </body>
 </html>
